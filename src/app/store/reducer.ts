@@ -1,11 +1,13 @@
 import { IAppState } from './IAppState';
 import { REQUEST_MOVIES_SUCCESS, FILTER_MOVIES } from '../movies/movies.actions';
+import { REQUEST_MOVIE_SUCCESS } from '../movie/movie.actions';
 
 const movies = [];
 
 const initialState: IAppState = {
     movies,
-    filteredMovies: movies
+    filteredMovies: movies,
+    activeMovie: null
 };
 
 function storeMovies(state, action): IAppState {
@@ -40,12 +42,20 @@ function filterMovies(state, action): IAppState {
     });
 }
 
+function storeMovie(state, action): IAppState {
+    return Object.assign({}, state, {
+        activeMovie: action.movie
+    });
+}
+
 export function reducer(state = initialState, action) {
     switch (action.type) {
         case REQUEST_MOVIES_SUCCESS:
             return storeMovies(state, action);
         case FILTER_MOVIES:
             return filterMovies(state, action);
+        case REQUEST_MOVIE_SUCCESS:
+            return storeMovie(state, action);
         default:
             return state;
     }

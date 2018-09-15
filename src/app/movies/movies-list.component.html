@@ -9,7 +9,7 @@
     <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let movie of filteredMovies$ | async">
       <div class="movie">
         <div class="movie-header">
-          <a [routerLink]="['/movie',movie.id]" class="white">
+          <a [routerLink]="['/movies', movie.id]" class="white">
             {{movie.key}}
           </a>
         </div>

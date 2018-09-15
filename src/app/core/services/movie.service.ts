@@ -12,4 +12,8 @@ export class MovieService {
   getMovies(): IMovie[] {
     return movies;
   }
+
+  getMovie(id: number): IMovie {
+    return movies.find(movie => movie.id === id);
+  }
 }
