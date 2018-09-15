@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieService } from '../core/services/movie.service';
 import { IMovie } from '../shared/interfaces';
 import { MovieActions } from './movies.actions';
+import { select } from '@angular-redux/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-movies-list',
@@ -10,12 +11,18 @@ import { MovieActions } from './movies.actions';
 })
 export class MoviesListComponent implements OnInit {
 
-  movies: IMovie[];
+  filter: string;
+  @select('filteredMovies') filteredMovies$: Observable<IMovie>;
 
-  constructor(private movieACtions: MovieActions) { }
+  constructor(private movieActions: MovieActions) { }
 
   ngOnInit() {
-    this.movieACtions.getMovies();
+    this.movieActions.getMovies();
+  }
+
+  filterChanged(event: any) {
+    event.preventDefault();
+    this.movieActions.filterMovies(this.filter);
   }
 
 }
