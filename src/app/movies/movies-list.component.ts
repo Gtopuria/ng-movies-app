@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../core/services/movie.service';
 import { IMovie } from '../shared/interfaces';
+import { MovieActions } from './movies.actions';
 
 @Component({
   selector: 'app-movies-list',
@@ -11,10 +12,10 @@ export class MoviesListComponent implements OnInit {
 
   movies: IMovie[];
 
-  constructor(private moviesService: MovieService) { }
+  constructor(private movieACtions: MovieActions) { }
 
   ngOnInit() {
-    this.movies = this.moviesService.getMovies();
+    this.movieACtions.getMovies();
   }
 
 }
