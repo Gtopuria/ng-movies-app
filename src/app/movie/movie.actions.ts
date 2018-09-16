@@ -13,10 +13,12 @@ export class MovieActions {
     ) { }
 
     getMovie(id: number) {
-        const movie = this.movieService.getMovie(id);
-        this.ngRedux.dispatch({
-            type: REQUEST_MOVIE_SUCCESS,
-            movie,
+        this.movieService.getMovie(id).subscribe((movie) => {
+            this.ngRedux.dispatch({
+                type: REQUEST_MOVIE_SUCCESS,
+                movie,
+            });
         });
+
     }
 }

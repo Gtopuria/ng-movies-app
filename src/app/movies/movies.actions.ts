@@ -14,10 +14,11 @@ export class MovieActions {
     ) { }
 
     getMovies() {
-        const movies = this.movieService.getMovies();
-        this.ngRedux.dispatch({
-            type: REQUEST_MOVIES_SUCCESS,
-            movies,
+        this.movieService.getMovies().subscribe((movies) => {
+            this.ngRedux.dispatch({
+                type: REQUEST_MOVIES_SUCCESS,
+                movies,
+            });
         });
     }
 
