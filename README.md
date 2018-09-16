@@ -2,26 +2,37 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.3.
 
-## Development server
+## RUN PROJECT
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
+1. ``npm install``
+2. ``npm run start-local`` - start app locally.
+``npm run start`` - for heroku deployment
+.
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run ``npm run test`` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Scaffolding
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Used ``Angular CLI`` for generating project, models, component, services, pipes
 
-## Further help
+## Used libraries/frameworks
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- Angular 6
+- Redux
+- RxJs
+- Bootstrap 4
+
+## Deployment
+
+Deployed to heroku [DEMO](https://ng-redux-sample-app.herokuapp.com)
+
+## App 
+
+- App contains two pages, movies list page and details page.
+- Movies can be filtered by name and genre(additional properties can be defined as an array ``props: ['key', 'genres']``).
+- App is fully using `Redux` for state management with custom helpers for immutability.
