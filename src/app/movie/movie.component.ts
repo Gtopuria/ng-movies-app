@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { MovieActions } from './movie.actions';
+import { select } from '@angular-redux/store';
+import { Observable } from 'rxjs';
+import { IMovie } from '../shared/interfaces';
 
 @Component({
   selector: 'app-movie',
@@ -9,6 +12,7 @@ import { MovieActions } from './movie.actions';
 })
 export class MovieComponent implements OnInit {
 
+  @select('activeMovie') activeMovie$: Observable<IMovie>;
   constructor(private route: ActivatedRoute, private movieActions: MovieActions) { }
 
   ngOnInit() {

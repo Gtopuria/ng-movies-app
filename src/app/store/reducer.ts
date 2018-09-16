@@ -25,7 +25,7 @@ function stringContains(searchTerm: string, prop: any) {
             }
         }
     }
-    return prop.toString().toLowerCase().indexOf(searchTerm) > -1;
+    return prop.toString().toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
 }
 
 function filterMovies(state, action): IAppState {

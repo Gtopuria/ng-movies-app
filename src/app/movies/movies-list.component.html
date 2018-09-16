@@ -1,12 +1,12 @@
 <div class="container">
   <form>
-    <div class="filter-container">
+    <div class="filter-container margin-top-2 margin-bottom-2">
       <input class="form-control" type="text" placeholder="filter..." id="searchTerm" name="filter" [(ngModel)]="filter"
         (keyup)="filterChanged($event)" />
     </div>
   </form>
   <div class="row movies-container">
-    <div class="col-sm-6 col-md-6 col-lg-6" *ngFor="let movie of filteredMovies$ | async">
+    <div class="col-sm-6 col-md-6 col-lg-6 margin-bottom-2" *ngFor="let movie of filteredMovies$ | async">
       <app-movie-card [movie]="movie">
       </app-movie-card>
     </div>

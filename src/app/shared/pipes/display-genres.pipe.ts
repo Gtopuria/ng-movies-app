@@ -10,7 +10,7 @@ export class DisplayGenresPipe implements PipeTransform {
     if (!value) {
       return '';
     }
-    return value.reduce((acc, item) => acc + ' ' + item);
+    return value.reduce((acc, item) => acc + ' ' + '<span class="badge badge-secondary">' + item + '</span>', '');
   }
 
 }

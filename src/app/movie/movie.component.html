@@ -1,3 +1,13 @@
-<p>
-  movie works!
-</p>
+<div class="container">
+  <div class="margin-5">
+    <h5 class="card-title">{{(activeMovie$ | async).name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted" [innerHTML]="(activeMovie$ | async).genres | displayGenres"></h6>
+    <img src="./assets/images/movie-covers/{{(activeMovie$ | async)?.img}}" class="details-image" />
+    <p class="card-text">{{(activeMovie$ | async).description}}</p>
+    <h6 class="card-subtitle mb-2 text-muted">Length: {{(activeMovie$ | async).length}}</h6>
+    <h6 class="card-subtitle mb-2 text-muted">Rate: {{(activeMovie$ | async).rate}}</h6>
+    <a [routerLink]="['/movies']" class="white float-right">
+      Back to list
+    </a>
+  </div>
+</div>

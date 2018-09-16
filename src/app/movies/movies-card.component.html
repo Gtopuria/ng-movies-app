@@ -1,12 +1,13 @@
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">{{movie.name}}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">{{movie.genres | displayGenres}}</h6>
+    <h6 class="card-subtitle mb-2 text-muted" [innerHTML]="movie.genres | displayGenres"></h6>
+    <img src="./assets/images/movie-covers/{{movie.img}}" class="details-image" />
     <p class="card-text">{{movie.description | trimDescription}}</p>
     <h6 class="card-subtitle mb-2 text-muted">Length: {{movie.length}}</h6>
     <h6 class="card-subtitle mb-2 text-muted">Rate: {{movie.rate}}</h6>
     <a [routerLink]="['/movies', movie.id]" class="white float-right">
-      details
+      Details
     </a>
   </div>
 </div>

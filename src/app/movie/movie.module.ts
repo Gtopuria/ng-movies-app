@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { MovieRoutingModule } from './movie-routing.module';
 import { MovieActions } from './movie.actions';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    MovieRoutingModule
+    MovieRoutingModule,
+    SharedModule
   ],
   providers: [MovieActions],
   declarations: [MovieRoutingModule.components]
