@@ -25,7 +25,7 @@ export class MovieActions {
         this.ngRedux.dispatch({
             type: FILTER_MOVIES,
             searchTerm,
-            props: ['key', 'id', 'genres']
+            props: ['key', 'genres']
         });
     }
 }

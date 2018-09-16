@@ -1,26 +1,14 @@
 <div class="container">
   <form>
-    <div>
-      <label for="searchTerm">Filter...</label>
-      <input type="text" id="searchTerm" name="filter" [(ngModel)]="filter" (keyup)="filterChanged($event)" />
+    <div class="filter-container">
+      <input class="form-control" type="text" placeholder="filter..." id="searchTerm" name="filter" [(ngModel)]="filter"
+        (keyup)="filterChanged($event)" />
     </div>
   </form>
-  <div class="row movie-container">
-    <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let movie of filteredMovies$ | async">
-      <div class="movie">
-        <div class="movie-header">
-          <a [routerLink]="['/movies', movie.id]" class="white">
-            {{movie.key}}
-          </a>
-        </div>
-        <div class="movie-body">
-          <div class="clearfix">
-            <div>
-              <div class="movie-body-content">{{ movie.key }}</div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="row movies-container">
+    <div class="col-sm-6 col-md-6 col-lg-6" *ngFor="let movie of filteredMovies$ | async">
+      <app-movie-card [movie]="movie">
+      </app-movie-card>
     </div>
   </div>
 </div>

@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { MoviesRoutingModule } from './movies-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { MovieActions } from './movies.actions';
+import { MovieCardComponent } from './movies-card.component';
 
 @NgModule({
   imports: [
@@ -14,6 +15,6 @@ import { MovieActions } from './movies.actions';
     SharedModule
   ],
   providers: [MovieActions],
-  declarations: [MoviesRoutingModule.components]
+  declarations: [MoviesRoutingModule.components, MovieCardComponent]
 })
 export class MoviesModule { }
